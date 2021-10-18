@@ -18,11 +18,10 @@ describe('Hellu',()=>{
 
   element(by.css("input[formcontrolname=password]")).sendKeys("12345");
    element(by.cssContainingText(".btn-danger","SIGN IN")).click().then(()=>{
-     
+     browser.sleep(4000);
    });
-  browser.sleep(3000);
   // browser.waitForAngular();
-  element(by.cssContainingText(".treeview","Dynamic forms")).click();
+  element(by.css(" div > ul > li:nth-child(2) > a > span:nth-child(2)")).click();
  
 
 element(by.cssContainingText(".treeview-menu","Add form")).click();
@@ -34,11 +33,20 @@ element(by.css("div:nth-child(2) > div > select")).click();
 element(by.css("div:nth-child(2) > div > select")).sendKeys(Key.ARROW_DOWN,Key.ARROW_DOWN,Key.ENTER);
 
 element(by.css("div:nth-child(3) > div > select")).click();
-element(by.css("div:nth-child(3) > div > select")).sendKeys(Key.ARROW_DOWN,Key.ARROW_DOWN,Key.ENTER).then(function(){
-  browser.sleep(3000);
-});;
+element(by.css("div:nth-child(3) > div > select")).sendKeys(Key.ARROW_DOWN,Key.ARROW_DOWN,Key.ENTER);
+element(by.css("input[formcontrolname=name]")).sendKeys("Me");
+element(by.css("input[formcontrolname=label]")).sendKeys("title");
+element(by.css("div:nth-child(3) > select")).sendKeys(Key.ARROW_DOWN,Key.ENTER);
+element(by.css("form > input")).click();
+element(by.css("div.multinav > div > ul > li:nth-child(3) > a")).click();
+browser.sleep(3000);
 
-  });;});
+ 
+// element(by.cssContainingText("btn btn-primary","Submit"));
+// browser.sleep(3000);
+// });
+});
+  });
 
 // element(by.css("div:nth-child(3) > div > select")).click();
 // element(by.cssContainingText(".form-control"," checkbox-group ")).click().then(function(){
